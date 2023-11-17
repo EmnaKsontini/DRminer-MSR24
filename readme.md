@@ -323,9 +323,9 @@ Morover, if you run `python drminer.py h2non/imaginary` you will get the followi
 
 ```
 # How to Use DRMiner as Dashbord (Optional- beta version)
-![Logo](images/add2.png)
+![Logo](images/add_commit.png)
+![Logo](images/total_per_project.png)
 ![Logo](images/view_commit.png)
-![Logo](images/total.png)
 Before you can use the Dashboard Name, you need to initialize the database. Follow these steps: 
 
 ```bash 
