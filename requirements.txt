@@ -1,0 +1,14 @@
+python-Levenshtein
+regex
+anytree
+dockerfile-parse
+pathlib
+Matching
+GitPython
+pandas
+tqdm
+GitPython
+flask
+werkzeug
+Flask-SQLAlchemy
+Flask-Migrate

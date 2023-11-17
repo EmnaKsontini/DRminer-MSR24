@@ -1,0 +1,61 @@
+<Dockerfile> ::= <Instruction>*
+<Instruction> ::= <FROM> | <RUN> | <CMD> | <LABEL> | <EXPOSE> | <ENV> | <ADD> | <COPY> | <ENTRYPOINT> | <VOLUME> | <USER> | <WORKDIR> | <ARG> | <STOPSIGNAL> | <HEALTHCHECK> | <SHELL>
+<FROM> ::= "FROM" [ "--platform=" <value> ] <image> [ ":" <tag> | "@" <digest> ] [ "AS" <alias> ]
+<RUN> ::= "RUN" [ "--mount=" <value> | "--network=" <value> | "--security=" <value> ] <command> ( <commandSeparator> <command> )*
+ | "RUN" <JSON-commands>
+<commandSeparator> ::= "&&" | "||" | ";"
+<CMD> ::= "CMD" <JSON-commands> | "CMD" <command>
+<LABEL> ::= "LABEL" <KeyValuePairList>
+<EXPOSE> := “EXPOSE” <port>+
+<ENV> ::= "ENV" <KeyValuePairList>
+<COPY> ::= "COPY"  [ <copy-flags>] <src>+ <dest>
+<ADD> ::= "ADD" [ <add-flags> ]  <src>+ <dest>
+<ENTRYPOINT> ::= "ENTRYPOINT" <JSON-commands> | "ENTRYPOINT" <command>
+<VOLUME> ::= "VOLUME" <JSON-paths> | <path>
+<USER> ::= "USER" <user> [ ":" <group> ]
+<WORKDIR> ::= "WORKDIR" <path>
+<ARG> ::= "ARG" <key> [ "=" <value> ]
+<STOPSIGNAL> := "STOPSIGNAL" <value>
+<HEALTHCHECK> :=  "HEALTHCHECK" [ <healthcheck-options> ] "CMD" <command>
+<SHELL> ::= "SHELL" <JSON-command>
+<copy-flags> ::= ( "--from=" <value> | "--chown=" <value> | "--chmod=" <value> )+
+<add-flags> ::= ( "--checksum=" <value> | "--chown=" <value> | "--chmod=" <value> )+
+<healthcheck-options> ::= ( "--interval=" <value> | "--timeout=" <value> | "--start-period=" <value> )
+<image> := <str>
+<tag>:= <str>
+<digest>:= <str>
+<alias> := <str>
+<command>:= <str>
+<JSON-commands> :=  "[" <command> ( "," <command> )* "]"
+<KeyValuePairList> := <key>  <value> |  (<key> "=" <value>)+
+<key>:= <str>
+<value> := <str>
+<str> ::= /([^$\n\s]|(\$<var>|\${<var>}))*/
+<var> ::= /[a-zA-Z_][a-zA-Z0-9_]*/
+<port>:= ((\d+)(\/([a-zA-Z]))?)+
+<src>:=<str>
+<dest>:=<str>
+<path>:=<str>
+<JSON-paths> :=  "[" <path> ( "," <path> )* "]"
+<user>:=<str>
+<group>:=<str>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
