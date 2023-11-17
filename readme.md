@@ -78,16 +78,16 @@ Replace `<repo>`, `<commithash>`, and `<DockerfilePath>` with the appropriate re
 ## Output
 DRMiner generates two types of output files:
 
-1. **Refactorings_Detected_Per_Commit**: This folder will contain a file for each analyzed project. Each file details refactorings in each commit, including which Dockerfile was analyzed and the specifics of each refactoring detected.
+1. **Results_projectName.json**: This file details the refactorings in each analyzed commit of the project. It includes information about which Dockerfile was analyzed and the specifics of each refactoring detected within it.
 
-2. **Refactorings_Stats _Per_Project**: This folder will contain a file for each analyzed project, providing statistical data on the refactorings. It includes counts of refactorings per commit and the total count of refactorings within the project.
+2. **Refactorings_Stats_imaginary.json**: This file provides statistical data on the refactorings. It includes the count of refactorings per analyzed commit and the total count of refactorings within the project.
 
 
 ## Example:
 
 For example if you run `python drminer.py h2non/imaginary --commit 4a4214a --path  /Dockerfile` you will get the following output file:
 
- 1. `Refactorings_Detected_Per_Commit/Results-imaginary.json`
+ 1. `Results-imaginary.json`
 ```json
 [
     {
@@ -132,7 +132,7 @@ For example if you run `python drminer.py h2non/imaginary --commit 4a4214a --pat
 ```
 Morover, if you run `python drminer.py h2non/imaginary` you will get the following output files:
 
-1. `Refactorings_Detected_Per_Commit/Results-imaginary.json`
+1. `Results-imaginary.json`
 ```json
 [
     {
@@ -195,7 +195,7 @@ Morover, if you run `python drminer.py h2non/imaginary` you will get the followi
 
  
 ```
-2. `Refactorings_Stats_Per_Project/Refactorings_Stats_imaginary.json`
+2. `Refactorings_Stats_imaginary.json`
 ```json
 {
     "commit_refactorings": {
