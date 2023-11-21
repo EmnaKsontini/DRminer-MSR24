@@ -516,7 +516,8 @@ if __name__ == "__main__":
     github_repo = args.github_repo
     specific_commit = args.commit
     specific_path = args.path 
-    
+    if specific_path and (not specific_path.startswith('/')):
+        specific_path = '/' + specific_path    
     
     github_repo = "https://github.com/" + github_repo
     print('github_repo',github_repo)
@@ -530,7 +531,7 @@ if __name__ == "__main__":
     if not specific_commit:
         dataset_commits=generate_dockerfile_dataset(repo)
     else:
-        dataset_commits=[{"commithash": specific_commit}]
+        dataset_commits=[{"commithash": specific_commit[:7]}]
     df = pd.DataFrame(dataset_commits)
     for _, row in tqdm(df.iterrows(), total=df.shape[0]):
         output = process_row(repo,temp_repo_path, row,specific_path)
@@ -560,7 +561,7 @@ def process_github_repo(github_repo, specific_commit=None, specific_path=None):
     if not specific_commit:
         dataset_commits = generate_dockerfile_dataset(repo)
     else:
-        dataset_commits = [{"commithash": specific_commit}]
+        dataset_commits = [{"commithash": specific_commit[:7]}]
     
     df = pd.DataFrame(dataset_commits)
 
