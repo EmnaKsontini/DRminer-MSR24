@@ -1,9 +1,7 @@
 
 # General info
 DRMiner is a tool written in python that can detect Dockerfile refactorings applied in the history of a Docker project.
-
 Currently, it supports the detection of the following refactorings:
-
 
 **<ins>supported by DRMiner 1.0 </ins>**
 
@@ -21,8 +19,20 @@ Currently, it supports the detection of the following refactorings:
 12. Move Stage
 
 # Contributors
-* [Anonymos]
+* Emna Ksontini & Aycha Abid
 
+# How to DRMiner
+If you are using DRMiner in your research, please cite the following papers:
+Ksontini, Emna, et al. "DRMiner: A Tool For Identifying And Analyzing Refactorings In Dockerfile." Proceedings of the 21st International Conference on Mining Software Repositories. 2024.
+```bash
+@inproceedings{ksontini2024drminer,
+  title={DRMiner: A Tool For Identifying And Analyzing Refactorings In Dockerfile},
+  author={Ksontini, Emna and Abid, Aycha and Khalsi, Rania and Kessentini, Marouane},
+  booktitle={Proceedings of the 21st International Conference on Mining Software Repositories},
+  pages={584--594},
+  year={2024}
+}
+```
 
 # Current precision and recall
 As of **11 November, 2023** the precision and recall of the tool on an oracle consisting of **351 Dockerfiles**  from **223 commits**  across **187 unique projects**  is:
